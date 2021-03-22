@@ -137,3 +137,42 @@ def is_unchanged_var_exists(target):
 
     return len(re.findall(r"{{.+?}}", temp)) != 0
 
+def parse_at_txt(txt, return_type='dict'):
+    """
+
+
+    아래의 형식을 파싱하여 dict, list 형태로 돌려줍니다.
+    @start_date=2020-01-01 @end_date=2020-02-01
+
+    **Example**
+
+    ```
+    import simple_utils
+    print(simple_utils.text.parse_at_txt('@start_date=20200101 @end_date=20200101'))
+    >> {'start_date': '20200101', 'end_date': '20200101'}
+    ```
+
+    **Parameters**
+
+    * **[REQUIRED] txt** (*str*) --
+        타겟 텍스트 입니다.
+
+    * **[REQUIRED] return_type** (*str*) --
+        dict | list
+        
+        *Default: dict*
+
+        중복된 키를 처리해야 하는 경우 list로 반환할 수 있습니다.
+
+    **Returns**
+
+    * **파싱된 결과 값** (*dict | list*) --
+    """                
+    data = [[e[0], '='.join(e[1:])] for e in [s.strip().split('=') for s in txt.split('@') if s]]
+    if return_type == 'array':
+        return data
+    elif return_type == 'dict':
+        return {key: value for key, value in data}
+    else:
+        raise ValueError(f"invalid return_type {return_type}")
+

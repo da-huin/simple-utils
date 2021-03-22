@@ -4,7 +4,7 @@ import csv
 
 
 def json_to_csv(json_data):
-    """
+    """\
     json을 csv string으로 만듭니다.
 
     **Parameters**
@@ -31,7 +31,7 @@ def json_to_csv(json_data):
         }
     ])
 
-    csv_data == 'hello,abc\nworld,def\nsimple,ghi\n'
+    csv_data == 'hello,abc\\nworld,def\\nsimple,ghi\\n'
     >> True
     ```
     """

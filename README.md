@@ -32,36 +32,33 @@
 
 json을 csv string으로 만듭니다.
 
-    **Parameters**
-    
-    * **json_data** (*list*) --
-    
-        csv로 만들 list형식의 json 데이터 입니다.
+**Parameters**
 
-    **Returns**
+* **json_data** (*list*) --
 
-    * **csv string (*string*)**
+    csv로 만들 list형식의 json 데이터 입니다.
 
-    **Example**
-    ```
-    import simple_utils
-    csv_data = simple_utils.file.json_to_csv([
-        {
-            'hello': 'world',
-            'abc':'def'
-        },
-        {
-            'hello': 'simple',
-            'abc':'ghi'
-        }
-    ])
+**Returns**
 
-    csv_data == 'hello,abc
-world,def
-simple,ghi
-'
-    >> True
-    ```
+* **csv string (*string*)**
+
+**Example**
+```
+import simple_utils
+csv_data = simple_utils.file.json_to_csv([
+    {
+        'hello': 'world',
+        'abc':'def'
+    },
+    {
+        'hello': 'simple',
+        'abc':'ghi'
+    }
+])
+
+csv_data == 'hello,abc\nworld,def\nsimple,ghi\n'
+>> True
+```
 
 
 
@@ -283,7 +280,7 @@ members = [
 df = pd.DataFrame(members)
 columns = [Column('id', 'BIGINT'), Column('name', 'VARCHAR(100)'), Column(
     'phone', 'VARCHAR(100)'), Column('created_at', 'TIMESTAMP')]
-dtypes = simple_utils.redshift.df_type_to_redshift_type(df, columns).dtypes
+dtypes = simple_utils.redshift.update_df_type_through_redshift_columns(df, columns).dtypes
 
 assert dtypes['id'] == np.int64
 assert dtypes['name'] == np.object
@@ -485,6 +482,35 @@ print(simple_utils.text.is_unchanged_var_exists('my name is {{name}}, and {{hell
 **Returns**
 
 * **True | False** (*bool*) --
+
+### 🌱 *(method)* `parse_at_txt`
+
+아래의 형식을 파싱하여 dict, list 형태로 돌려줍니다.
+@start_date=2020-01-01 @end_date=2020-02-01
+
+**Example**
+
+```
+import simple_utils
+print(simple_utils.text.parse_at_txt('@start_date=20200101 @end_date=20200101'))
+>> {'start_date': '20200101', 'end_date': '20200101'}
+```
+
+**Parameters**
+
+* **[REQUIRED] txt** (*str*) --
+    타겟 텍스트 입니다.
+
+* **[REQUIRED] return_type** (*str*) --
+    dict | list
+    
+    *Default: dict*
+
+    중복된 키를 처리해야 하는 경우 list로 반환할 수 있습니다.
+
+**Returns**
+
+* **파싱된 결과 값** (*dict | list*) --
 
 
 
