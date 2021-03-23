@@ -548,6 +548,22 @@ print(simple_utils.time.get_kst_ymd()
 
 * **한국시간 %Y-%m-%d** (*str*) --
 
+### 🌱 *(method)* `get_month_dt_list`
+
+날짜 사이의 날짜들을 월로 구분하여 가져옵니다.
+
+**Example**
+
+```
+import simple_utils
+from datetime import datetime
+print(simple_utils.time.get_month_dt_list(datetime(2015, 1))
+```
+
+**Returns**
+
+* **datetime list** (*list*) --
+
 
 
 ## 🍀 Simple Waitor
