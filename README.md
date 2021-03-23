@@ -560,6 +560,24 @@ from datetime import datetime
 print(simple_utils.time.get_month_dt_list(datetime(2015, 1))
 ```
 
+**Parameters**
+
+* **[REQUIRED] start_dt** (*datetime.datetime*) --
+    
+    시작할 날짜입니다.
+    
+* **last_dt** (*datetime.datetime*) --
+    
+    *Default: None*
+
+    종료할 날짜입니다.
+
+* **_format** (*str*) --
+    
+    *Default: None*
+
+    strftime으로 스트링으로 변환하려면 아래의 매개변수를 입력하세요.
+
 **Returns**
 
 * **datetime list** (*list*) --

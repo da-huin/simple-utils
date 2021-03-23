@@ -6,7 +6,7 @@ import io
 from setuptools import find_packages, setup
 
 setup(name='simple_utils',
-      version='1.0.7',
+      version='1.0.8',
       description='Python utils.',
       long_description="Please refer to the https://github.com/da-huin/simple_utils",
       long_description_content_type="text/markdown",
