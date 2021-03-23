@@ -572,7 +572,7 @@ print(simple_utils.time.get_month_dt_list(datetime(2015, 1))
 
     종료할 날짜입니다.
 
-* **_format** (*str*) --
+* **format** (*str*) --
     
     *Default: None*
 
