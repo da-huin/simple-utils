@@ -32,7 +32,7 @@ def get_kst_ymd():
     ```
 
     **Returns**
-
+c
     * **한국시간 %Y-%m-%d** (*str*) --
     """    
     return get_kst().strftime('%Y-%m-%d')

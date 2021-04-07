@@ -537,16 +537,16 @@ print(simple_utils.time.get_kst()
 
 어떤 환경에서든지 항상 한국 시간의 %Y-%m-%d을 가져오고 싶을 때 사용할 수 있습니다.
 
-**Example**
+    **Example**
 
-```
-import simple_utils
-print(simple_utils.time.get_kst_ymd()
-```
+    ```
+    import simple_utils
+    print(simple_utils.time.get_kst_ymd()
+    ```
 
-**Returns**
-
-* **한국시간 %Y-%m-%d** (*str*) --
+    **Returns**
+c
+    * **한국시간 %Y-%m-%d** (*str*) --
 
 ### 🌱 *(method)* `get_month_dt_list`
 

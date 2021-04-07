@@ -6,7 +6,7 @@ import io
 from setuptools import find_packages, setup
 
 setup(name='simple_utils',
-      version='1.0.9',
+      version='1.0.10',
       description='Python utils.',
       long_description="Please refer to the https://github.com/da-huin/simple_utils",
       long_description_content_type="text/markdown",
@@ -16,7 +16,7 @@ setup(name='simple_utils',
       author_email='dahuin000@gmail.com',
       license='MIT',
       packages=find_packages(),
-      install_requires=[],
+      install_requires=['pytz', 'python-dateutil', 'jsonschema'],
       classifiers=[
           'Programming Language :: Python :: 3',
     ]
