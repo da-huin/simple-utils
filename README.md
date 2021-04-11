@@ -10,8 +10,8 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/da-huin/aws_glove.svg)](https://github.com/jaden-git/simple-utils/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/da-huin/aws_glove.svg)](https://github.com/jaden-git/simple-utils/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/da-huin/aws_glove.svg)](https://github.com/da-huin/simple-utils/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/da-huin/aws_glove.svg)](https://github.com/da-huin/simple-utils/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
@@ -649,7 +649,7 @@ Queue에 값을 추가합니다.
 
 - Title icon made by [Freepik](https://www.flaticon.com/kr/authors/freepik).
 
-- If you have a problem. please make [issue](https://github.com/jaden-git/simple-utils/issues).
+- If you have a problem. please make [issue](https://github.com/da-huin/simple-utils/issues).
 
 - Please help develop this project 😀
 
