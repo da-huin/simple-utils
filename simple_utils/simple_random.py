@@ -1,3 +1,4 @@
+import random
 import uuid
 import time
 from . import simple_text
@@ -26,7 +27,7 @@ def make_uuid_including_time():
     **Example**
     ```
     import simple_utils
-    simple_utils.make_uuid_including_time()
+    simple_utils.random.make_uuid_including_time()
     ```
     **Returns**
 
@@ -34,3 +35,19 @@ def make_uuid_including_time():
     """    
     return str(time.time_ns()) + "_" + simple_text.get_random_string(5)
 
+
+def get_element(arr):
+    """
+    원소 중 하나를 랜덤으로 가져옵니다.
+
+    **Example**
+    ```
+    import simple_utils
+    arr = ['a','b','c']
+    simple_utils.random.get_element(arr)
+    ```
+    **Returns**
+
+    * **원소 중 하나**
+    """        
+    return arr[random.randint(0, len(arr) - 1)]
