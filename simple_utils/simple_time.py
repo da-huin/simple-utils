@@ -88,3 +88,42 @@ def get_month_dt_list(start_dt, last_dt=None, format=None):
         return [dt.strftime(format) for dt in dt_list]
     
     return dt_list
+
+def get_seconds_by_unit(str_time):
+    """
+    24h, 30m, 10s 같은 간단한 스트링 타입의 문자열을 int형의 초 단위로 변환해줍니다.
+
+    **Example**
+
+    ```
+    import simple_utils
+    print(simple_utils.time.get_seconds_by_unit('24h'))
+    ```
+
+    **Parameters**
+
+    * **[REQUIRED] str_time** (*str*) --
+
+        스트링 타입의 시간 문자열입니다. 아래와 같은 방식으로 입력할 수 있습니다.
+        
+        - 24h: 24시간
+        - 30m: 30분
+        - 10s: 10초
+        
+    **Returns**
+
+    * **seconds** (*int*) -- 
+    """
+    unit = str_time[-1]
+    num = int(str_time[:-1])
+    seconds = -1
+    if unit == 'h':
+        seconds = num * 60 * 60
+    elif unit == 'm':
+        seconds = num * 60
+    elif unit == 's':
+        seconds = num
+    else:
+        raise ValueError(f'invalid unit {unit}')
+        
+    return seconds

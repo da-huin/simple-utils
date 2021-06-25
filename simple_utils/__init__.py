@@ -9,3 +9,6 @@ from . import simple_text as text
 from . import simple_time as time
 from . import simple_waitor as waitor
 from . import simple_web as web
+from . import simple_logging as logging
+from . import simple_array as array
+
