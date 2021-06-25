@@ -184,15 +184,16 @@ def is_array_looking_for(array: list, user_array: list):
 
     return False
 
-def split_list(array: list, quantity: int, strainer: Callable):
+def split_list(array: list, quantity: int, strainer: Callable = None):
     
     piece_list = []
     piece = []
         
     for item in array:
         
-        if not strainer(item):
-            continue
+        if strainer:
+            if not strainer(item):
+                continue
 
         piece.append(item)
         if len(piece) >= quantity:
