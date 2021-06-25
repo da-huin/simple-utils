@@ -2,6 +2,7 @@ import hashlib
 import jsonschema
 import re
 import os
+from typing import Callable
 
 class dotdict(dict):
     """
@@ -183,3 +184,22 @@ def is_array_looking_for(array: list, user_array: list):
 
     return False
 
+def split_list(array: list, quantity: int, strainer: Callable):
+    
+    piece_list = []
+    piece = []
+        
+    for item in array:
+        
+        if not strainer(item):
+            continue
+
+        piece.append(item)
+        if len(piece) >= quantity:
+            piece_list.append(piece.copy())
+            piece = []
+            
+    if len(piece):
+        piece_list.append(piece.copy())
+        
+    return piece_list
